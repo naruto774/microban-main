@@ -1,0 +1,298 @@
+{
+  "run": {
+    "algo": "ppo",
+    "task": "MICROBANWalkFlat",
+    "sim_backend": "motrix",
+    "device": "cuda",
+    "collector_device": null,
+    "log_dir": "/home/elephant/robot/UniLab/logs/rsl_rl_ppo/MICROBANWalkFlat/2026-08-25_16-04-14_motrix",
+    "start_time_utc": "2026-08-25T08:04:14.026261+00:00",
+    "hostname": "elephant-MS-7E06",
+    "user": "elephant",
+    "git": {
+      "commit": "382a7d02eb49ea0bc4b83406e62acc59a543aa0d",
+      "branch": "main",
+      "dirty": true
+    },
+    "hardware": {
+      "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+      "chip": "Intel(R) Core(TM) i9-14900K",
+      "cpu_total_cores": "24",
+      "cpu_performance_cores": "unknown",
+      "cpu_efficiency_cores": "unknown",
+      "gpu_name": "NVIDIA GeForce RTX 4080 SUPER",
+      "memory": "62.6 GB",
+      "gpu_memory": "16376 MiB"
+    },
+    "wandb": {
+      "project": "unilab",
+      "entity": null,
+      "name": "ppo__MICROBANWalkFlat__2026-08-25_16-04-14_motrix",
+      "group": "MICROBANWalkFlat",
+      "job_type": "ppo",
+      "tags": [
+        "ppo",
+        "MICROBANWalkFlat",
+        "motrix",
+        "user-elephant"
+      ],
+      "notes": null,
+      "mode": null
+    },
+    "configured_seed": 1,
+    "configured_seed_source": "algo.seed",
+    "effective_seed": 1
+  },
+  "config": {
+    "algo": {
+      "algo": "ppo",
+      "algo_log_name": "rsl_rl_ppo",
+      "seed": 1,
+      "num_envs": 4096,
+      "num_steps_per_env": 24,
+      "max_iterations": 2000,
+      "save_interval": 200,
+      "empirical_normalization": true,
+      "runner_class_name": "OnPolicyRunner",
+      "obs_groups": {
+        "default": [
+          "policy"
+        ],
+        "actor": [
+          "actor"
+        ],
+        "critic": [
+          "critic"
+        ]
+      },
+      "experiment_name": "test",
+      "run_name": "",
+      "resume": false,
+      "load_run": "-1",
+      "checkpoint": -1,
+      "resume_path": null,
+      "policy": {
+        "init_noise_std": 1.0,
+        "actor_hidden_dims": [
+          512,
+          256,
+          128
+        ],
+        "critic_hidden_dims": [
+          512,
+          256,
+          128
+        ],
+        "activation": "elu",
+        "class_name": "ActorCritic"
+      },
+      "algorithm": {
+        "class_name": "unilab.algos.torch.rsl_rl_ppo:FinalObservationAwarePPO",
+        "value_loss_coef": 1.0,
+        "use_clipped_value_loss": true,
+        "clip_param": 0.2,
+        "entropy_coef": 0.005,
+        "num_learning_epochs": 5,
+        "num_mini_batches": 4,
+        "learning_rate": 0.0003,
+        "schedule": "adaptive",
+        "gamma": 0.99,
+        "lam": 0.95,
+        "desired_kl": 0.01,
+        "target_kl_stop": null,
+        "max_grad_norm": 1.0,
+        "adaptive_kl_beta": 0.9,
+        "adaptive_lr_growth": 1.1,
+        "adaptive_lr_decay": 1.2,
+        "adaptive_lr_update_interval": 5,
+        "metrics_interval": 8,
+        "finite_check_interval": 8,
+        "enable_compile": false,
+        "warmup_strict_iters": 10,
+        "warmup_metrics_interval": 2,
+        "warmup_finite_check_interval": 2,
+        "disable_finite_checks": true
+      }
+    },
+    "training": {
+      "task_name": "MICROBANWalkFlat",
+      "device": null,
+      "logger": "tensorboard",
+      "wandb_project": "unilab",
+      "wandb_entity": null,
+      "wandb_group": null,
+      "wandb_job_type": null,
+      "wandb_name": null,
+      "wandb_tags": [],
+      "wandb_notes": null,
+      "wandb_mode": null,
+      "sim_backend": "motrix",
+      "nan_guard": {
+        "enabled": true,
+        "buffer_size": 100,
+        "max_envs_to_dump": 5,
+        "output_dir": null
+      },
+      "play_only": false,
+      "no_play": false,
+      "sim2sim_strict": true,
+      "play_render_mode": "auto",
+      "play_env_num": 16,
+      "render_spacing": 1.0,
+      "play_steps": 200,
+      "cam_distance": 6.0,
+      "cam_elevation": -20.0,
+      "cam_azimuth": 90.0,
+      "cam_lookat": null,
+      "cam_tracking": false,
+      "cam_tracking_env_idx": 0,
+      "cam_tracking_extra_envs": 2,
+      "log_root": null,
+      "num_timesteps": null,
+      "log_dir": null
+    },
+    "interactive": {
+      "action_mode": "zero",
+      "policy_obs_mode": "auto",
+      "show_target_bodies": false,
+      "show_reward_debug": false,
+      "target_show_axes": false,
+      "target_body_names": "",
+      "target_max_bodies": 0,
+      "target_marker_radius": 0.02,
+      "target_axis_length": 0.08,
+      "target_marker_alpha": 0.75,
+      "reward_debug_show_velocity": false,
+      "reward_debug_lin_vel_scale": 0.08,
+      "reward_debug_ang_vel_scale": 0.05,
+      "reward_debug_show_connectors": false,
+      "reward_debug_show_global_anchor": false,
+      "camera_follow_body": true,
+      "camera_focus_body_name": "",
+      "camera_height_offset": 0.15,
+      "camera_distance": null,
+      "camera_elevation": null,
+      "camera_azimuth": null,
+      "use_env_visual_model": true,
+      "speed": 1.0,
+      "start_paused": false,
+      "keyboard": false,
+      "keyboard_step_lin": 0.1,
+      "keyboard_step_ang": 0.2
+    },
+    "viser": {
+      "port": 8080,
+      "env_idx": 0,
+      "display_mode": "all",
+      "max_envs": 16
+    },
+    "env": {
+      "post_step_forward_sensor": false,
+      "adaptive_chunk_size": true,
+      "chunk_size": null,
+      "control_config": {
+        "action_scale": 0.25
+      },
+      "noise_config": {
+        "level": 1.0,
+        "scale_joint_angle": 0.01,
+        "scale_joint_vel": 1.5,
+        "scale_gyro": 0.2
+      }
+    },
+    "reward": {
+      "scales": {
+        "tracking_lin_vel": 2.0,
+        "tracking_ang_vel": 0.2,
+        "forward_progress": 0.0,
+        "under_speed": -0.2,
+        "upper_body_pose": -0.05,
+        "penalty_feet_ori": 0.0,
+        "feet_phase": 1.0,
+        "feet_phase_contrast": 1.5,
+        "feet_phase_contact": 1.0,
+        "feet_double_stance": -1.0,
+        "lin_vel_z": -1.0,
+        "ang_vel_xy": -0.2,
+        "base_height": -120.0,
+        "orientation": -5.0,
+        "action_rate": -0.005,
+        "pose": -0.05
+      },
+      "tracking_sigma": 0.25,
+      "gait_frequency": 1.5,
+      "feet_phase_swing_height": 0.03,
+      "feet_phase_tracking_sigma": 0.008,
+      "base_height_target": 0.17,
+      "min_base_height": 0.1,
+      "max_tilt_deg": 35.0,
+      "close_feet_threshold": 0.05,
+      "pose_weights": [
+        0.3,
+        0.3,
+        0.01,
+        0.01,
+        0.1,
+        0.1,
+        0.3,
+        0.3,
+        0.01,
+        0.01,
+        0.1,
+        0.1
+      ]
+    },
+    "play_profile": {
+      "enabled": true,
+      "env": {
+        "render_spacing": 2.0
+      }
+    }
+  },
+  "contract_snapshot": {
+    "algo.obs_groups": {
+      "default": [
+        "policy"
+      ],
+      "actor": [
+        "actor"
+      ],
+      "critic": [
+        "critic"
+      ]
+    },
+    "env.control_config.action_scale": 0.25,
+    "algo.policy.actor_hidden_dims": [
+      512,
+      256,
+      128
+    ],
+    "algo.policy.critic_hidden_dims": [
+      512,
+      256,
+      128
+    ],
+    "algo.empirical_normalization": true,
+    "reward.scales": {
+      "tracking_lin_vel": 2.0,
+      "tracking_ang_vel": 0.2,
+      "forward_progress": 0.0,
+      "under_speed": -0.2,
+      "upper_body_pose": -0.05,
+      "penalty_feet_ori": 0.0,
+      "feet_phase": 1.0,
+      "feet_phase_contrast": 1.5,
+      "feet_phase_contact": 1.0,
+      "feet_double_stance": -1.0,
+      "lin_vel_z": -1.0,
+      "ang_vel_xy": -0.2,
+      "base_height": -120.0,
+      "orientation": -5.0,
+      "action_rate": -0.005,
+      "pose": -0.05
+    },
+    "reward.base_height_target": 0.17,
+    "reward.max_tilt_deg": 35.0,
+    "reward.min_base_height": 0.1
+  }
+}

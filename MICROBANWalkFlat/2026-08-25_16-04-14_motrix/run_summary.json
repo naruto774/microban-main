@@ -1,0 +1,13 @@
+{
+  "algo": "ppo",
+  "task": "MICROBANWalkFlat",
+  "sim_backend": "motrix",
+  "log_dir": "/home/elephant/robot/UniLab/logs/rsl_rl_ppo/MICROBANWalkFlat/2026-08-25_16-04-14_motrix",
+  "start_time_utc": "2026-08-25T08:04:14.026261+00:00",
+  "end_time_utc": "2026-08-25T08:23:06.275161+00:00",
+  "wall_time_sec": 1132.248893534008,
+  "wandb_run_url": null,
+  "configured_seed": 1,
+  "configured_seed_source": "algo.seed",
+  "effective_seed": 1
+}
